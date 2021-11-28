@@ -22,7 +22,7 @@ contig_lenth_distr.py
 
 
 ## Removal of spurious markers
-This scripts removed single markers which are apparently misplaced on the wrong linkage group. Input and output are BED files.
+This scripts removed single markers which are apparently misplaced on the wrong linkage group. Input and output are BED files. This script also removes genetic markers with an identical genetic position i.e. no recombination between two adjacent markers.
 
 remove_spurious_markers.py
 
