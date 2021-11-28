@@ -21,7 +21,7 @@ def main( arguments ):
 	input_file = arguments[ arguments.index('--in')+1 ]
 	output_file = arguments[ arguments.index('--out')+1 ]
 	
-	min_marker_cutoff = 3
+	min_marker_cutoff = 2
 	gen_diff_cutoff = 0.1
 	
 	# --- load marker from file --- #
@@ -55,7 +55,7 @@ def main( arguments ):
 			while marker_order[ potential_errors[ index ]['line'] ]+1 == marker_order[ potential_errors[ index+1 ]['line'] ]:
 				tmp_errors.append( potential_errors[ index ] )
 				index += 1
-				if index == len( potential_errors )-2:
+				if index >= len( potential_errors )-1:
 					break
 			if len( tmp_errors ) > min_marker_cutoff:
 				gen_diff = abs( tmp_errors[0]['genpos'] - tmp_errors[-1]['genpos'] )
@@ -65,7 +65,7 @@ def main( arguments ):
 					out.write( "\n" )
 					block_counter += 1
 			index += 1
-			if index == len( potential_errors )-2:
+			if index >= len( potential_errors )-1:
 				break
 	
 	print ( block_counter )

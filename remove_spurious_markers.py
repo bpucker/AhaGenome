@@ -22,6 +22,7 @@ def main( arguments ):
 	output_file = arguments[ arguments.index('--out')+1 ]
 	
 	cutoff = 1000000
+	gen_dist_cutoff = 0.0001
 	
 	# --- load marker from file --- #
 	markers = []
@@ -29,7 +30,7 @@ def main( arguments ):
 		line = f.readline()
 		while line:
 			parts = line.strip().split('\t')
-			markers.append( { 'chr': parts[0], 'pos': int( parts[1] ), 'line': line } )
+			markers.append( { 'chr': parts[0], 'pos': int( parts[1] ), 'line': line, 'genpos': float( parts[3].split(':')[-1] ) } )
 			line = f.readline()
 	
 	clean_markers = []
@@ -46,7 +47,14 @@ def main( arguments ):
 				if marker['pos'] < markers[ idx+1 ]['pos']-cutoff:
 					status = False
 			if status:
-				clean_markers.append( marker )
+				if len( clean_markers ) > 0:
+					if clean_markers[-1]['chr'] == marker['chr']:
+						if abs( clean_markers[-1]['genpos'] - marker['genpos'] ) >= gen_dist_cutoff:
+							clean_markers.append( marker )
+					else:
+						clean_markers.append( marker )
+				else:
+					clean_markers.append( marker )
 	
 	
 	print ( len( markers ) )
