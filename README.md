@@ -2,6 +2,8 @@
 Collection of scripts associated with _Arabidopsis halleri_ genome assembly.
 
 ## Genome assembly process
+Trimming of short reads prior to TrioBinning with Trimmomatic v0.39 (Bolger, 2014): 2:30:10; SLIDINGWINDOW:4:15 LEADING:5 TRAILING:5 MINLEN:50 TOPHRED33
+
 
 
 ## Scripts
