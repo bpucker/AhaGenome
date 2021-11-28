@@ -1,7 +1,10 @@
 # AhaGenome
 Collection of scripts associated with _Arabidopsis halleri_ genome assembly.
 
+## Genome assembly process
 
+
+## Scripts
 ONT_scaffolding.py
 
 in_silico_genetic_map_constructor.py
