@@ -8,14 +8,13 @@ Canu assembly:
 'genomeSize=250m' 'correctedErrorRate=0.02' 'corOutCoverage=100' 'minReadLength=2000' 'minOverlapLength=500'
 'batOptions=-dg 3 -db 3 -dr 1 -ca 500 -cp 50'
 
-## Scripts
-ONT_scaffolding.py
+## Phasing
+TrioBinning was used to separate reads by parent. These reads were aligned to the assembly with minimap2. Coverage files were generated as previously described (Pucker & Brockington, 2018). Coverage per contig was calculated for the D111 and D654 read mappings. Contigs were assigned to one haplophase if the ratio between both coverage was >10.
 
-in_silico_genetic_map_constructor.py
+analyze_cov_per_contig.py
 
-jcvi_wrapper_genes.py
+cov_based_phasing.py
 
-phasing_check.py
 
 ## Contig length distribution
 
@@ -32,3 +31,15 @@ This script performs a nummeric comparison of genetic and physical marker positi
 
 nummeric_check.py
 
+
+
+
+
+## Scripts
+ONT_scaffolding.py
+
+in_silico_genetic_map_constructor.py
+
+jcvi_wrapper_genes.py
+
+phasing_check.py
