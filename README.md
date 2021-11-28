@@ -17,6 +17,10 @@ jcvi_wrapper_genes.py
 
 phasing_check.py
 
+## Contig length distribution
+
+contig_lenth_distr.py
+
 
 ## Removal of spurious markers
 This scripts removed single markers which are apparently misplaced on the wrong linkage group. Input and output are BED files.
