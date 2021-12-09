@@ -3,7 +3,7 @@
 ### v0.2 ###
 
 __usage__ = """
-					python sample_classifier.py
+					python3 assembly_splitting.py
 					--in <INPUT_FILE>
 					--out <OUTPUT_FILE>
 					--info <INFO_FILE>
@@ -73,6 +73,10 @@ def main( arguments ):
 			counter = 1
 			try:
 				todo = sorted( info[ key ], key=itemgetter( 'start' ) )
+			except KeyError:
+				todo = []
+				out.write( ">" + key + "\n" + assembly[ key ] + "\n" )
+			if len( todo ) > 0:
 				if len( todo ) == 1:
 					seq = assembly[ key ][ :todo[0]['start'] ]
 					if len( seq ) > min_seq_len:
@@ -82,24 +86,24 @@ def main( arguments ):
 					if len( seq ) > min_seq_len:
 						out.write( ">" + key + str( counter ) + "\n" + seq + "\n" )
 						counter += 1
-				for idx, each in enumerate( todo ):
-					if idx == 0:
-						seq = assembly[ key ][ :todo[0]['start'] ]
-						if len( seq ) > min_seq_len:
-							out.write( ">" + key + str( counter ) + "\n" + seq + "\n" )
-							counter += 1
-					if idx > 0:
-						seq = assembly[ key ][ todo[idx-1]['start']:todo[idx]['end'] ]
-						if len( seq ) > min_seq_len:
-							out.write( ">" + key + str( counter ) + "\n" + seq + "\n" )
-							counter += 1
-					if idx == len( todo )-1:
-						seq = assembly[ key ][ todo[0]['end']: ]
-						if len( seq ) > min_seq_len:
-							out.write( ">" + key + "\n" + seq + "\n" )
-							counter += 1
-			except KeyError:
-				out.write( ">" + key + "\n" + assembly[ key ] + "\n" )
+				else:
+					for idx, each in enumerate( todo ):
+						if idx == 0:
+							seq = assembly[ key ][ :todo[0]['start'] ]
+							if len( seq ) > min_seq_len:
+								out.write( ">" + key + str( counter ) + "\n" + seq + "\n" )
+								counter += 1
+						if idx > 0:
+							seq = assembly[ key ][ todo[idx-1]['end']:todo[idx]['start'] ]
+							if len( seq ) > min_seq_len:
+								out.write( ">" + key + str( counter ) + "\n" + seq + "\n" )
+								counter += 1
+						if idx == len( todo )-1:
+							seq = assembly[ key ][ todo[idx]['end']: ]
+							if len( seq ) > min_seq_len:
+								out.write( ">" + key + str( counter ) + "\n" + seq + "\n" )
+								counter += 1
+			
 
 
 if '--in' in sys.argv and '--out' in sys.argv and '--info' in sys.argv:
