@@ -117,7 +117,36 @@ Mandatory:
 
 
 ## Scripts
-ONT_scaffolding.py
+Long reads are converted into a database for BLAST. Contig ends of an assembly are searched against this database. If two contig ends hit the same read, it is possible that they should be connected.
+
+```
+Usage:
+  python ONT_scaffolding.py --assembly <FILE> --reads <FILE> --out <FOLDER>
+
+Mandatory:
+  --assembly   STR        Assembly file (FASTA)
+  --reads      STR        Reads file (FASTA)
+  --out        STR        Output folder
+  
+  optional:
+  --minlen     INT        Minimal alignment length
+  --minsim     INT        Minimal alignment similarity
+  --cpus       INT        Number of CPUs to use
+```
+
+
+`--assembly` specifies the assembly input file (FASTA).
+
+`--reads` specifies the file of long reads in FASTA format.
+
+`--out` specifies the output folder.
+
+`--minlen` specifies the minimal alignemnt length of hits to be considered in the BLAST step.
+
+`--minsim` specifies the minimal alignemnt similarity of hits to be considered in the BLAST step.
+
+`--cpus` specifies the number of threads to use for BLAST.
+
 
 in_silico_genetic_map_constructor.py
 
