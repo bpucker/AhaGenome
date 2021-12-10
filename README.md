@@ -62,7 +62,7 @@ Mandatory:
 
 ```
 Usage:
-  python contig_lenth_distr.py --cov <FILE> --out <DIR>
+  python contig_lenth_distr.py --in <FILE> --out <FILE>
 
 Mandatory:
   --in   STR        Input file (FASTA)
@@ -81,7 +81,7 @@ This scripts removed single markers which are apparently misplaced on the wrong 
 
 ```
 Usage:
-  python3 remove_spurious_markers.py --cov <FILE> --out <DIR>
+  python3 remove_spurious_markers.py --in <FILE> --out <FILE>
 
 Mandatory:
   --in   STR        Input file (TXT)
@@ -98,8 +98,20 @@ Mandatory:
 ## Marker colinearity check
 This script performs a nummeric comparison of genetic and physical marker positions to identify outliers. Groups of X outliers with a minimal genetic size of X are flagged.
 
-nummeric_check.py
 
+```
+Usage:
+  python3 nummeric_check.py --in <FILE> --out <FILE>
+
+Mandatory:
+  --in   STR        Input file (TXT)
+  --out  STR        Output file (TXT)
+```
+
+
+`--in` specifies the input file that contains all clean genetic markers (TXT).
+
+`--out` specifies the output file that will contain only genetic markers that deviate from the expected position based on the assembly (TXT).
 
 
 
