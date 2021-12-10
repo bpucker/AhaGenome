@@ -116,7 +116,7 @@ Mandatory:
 
 
 
-## Scripts
+## Long read-based scaffolding
 Long reads are converted into a database for BLAST. Contig ends of an assembly are searched against this database. If two contig ends hit the same read, it is possible that they should be connected.
 
 ```
@@ -147,8 +147,8 @@ Mandatory:
 
 `--cpus` specifies the number of threads to use for BLAST.
 
-
-Script for the contstruction of a genetic map (BED) which serves as input for ALLPATHS.
+## Construction of ALLMAPS input file
+Script for the contstruction of a genetic map (BED) which serves as input for ALLMAPS.
 
 ```
 Usage:
@@ -175,8 +175,13 @@ Mandatory:
 
 `--k` specifies the length of the query sequence that is used to identify the marker position in the new assembly.
 
+## Analyze individual genes
 
 jcvi_wrapper_genes.py
+
+
+
+## Analyze phasing at individual gene level
 
 phasing_check.py
 
