@@ -23,13 +23,39 @@ Mandatory:
 ```
 
 
-`--cov` specifies the .
+`--cov` specifies the coverage input file ([Pucker & Brockington, 2018](https://doi.org/10.1186/s12864-018-5360-z)).
 
-`--out` specifies the .
+`--out` specifies the output folder. All result files will be placed in this folder. If this folder does not exist already, it will be created.
 
 
 
-cov_based_phasing.py
+```
+Usage:
+  python cov_based_phasing.py --cov <FILE> --out <DIR>
+
+Mandatory:
+  --covinfo1  STR        Coverage file1
+  --covinfo2  STR        Coverage file2
+  --assembly  STR        Assembly file (FASTA)
+  --haplo1    STR        Haplophase1 file (FASTA)
+  --haplo2    STR        Haplophase2 file (FASTA)
+  --unclass   STR        Unclassified file (FASTA)
+```
+
+`--covinfo1` specifies the coverage input file that belongs to haplophase1. This file is based on a mapping of haplophase1 reads. This file is used to calculate the average coverage per contig.
+
+`--covinfo2` specifies the coverage input file that belongs to haplophase2. This file is based on a mapping of haplophase2 reads.. This file is used to calculate the average coverage per contig.
+
+`--assembly` specifies the assembly input file (FASTA). Sequence names in this file need to match the sequence names in the coverage files.
+
+`--haplo1` specifies the haplophase1 output file (FASTA).
+
+`--haplo2` specifies the haplophase2 output file (FASTA).
+
+`--unclass` specifies the output file of all sequences that were not assigned to haplophase1 or haplophase2 (FASTA).
+
+
+
 
 
 ## Contig length distribution
