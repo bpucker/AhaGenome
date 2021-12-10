@@ -1,5 +1,5 @@
-# AhaGenome
-Collection of scripts associated with _Arabidopsis halleri_ genome assembly.
+# _Arabidopsis halleri_ genome sequence
+Collection of scripts associated with the _Arabidopsis halleri_ genome sequence assembly.
 
 ## Genome assembly process
 Trimming of short reads prior to TrioBinning with Trimmomatic v0.39 (Bolger, 2014): Illumina_adapters.fa:2:30:10; SLIDINGWINDOW:4:15 LEADING:5 TRAILING:5 MINLEN:50 TOPHRED33
