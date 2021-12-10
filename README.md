@@ -11,7 +11,23 @@ Canu assembly:
 ## Phasing
 TrioBinning was used to separate reads by parent. These reads were aligned to the assembly with minimap2. Coverage files were generated as previously described ([Pucker & Brockington, 2018](https://doi.org/10.1186/s12864-018-5360-z)). Coverage per contig was calculated for the D111 and D654 read mappings. Contigs were assigned to one haplophase if the ratio between both coverage was >10.
 
-analyze_cov_per_contig.py (yam paper?)
+
+
+```
+Usage:
+  python analyze_cov_per_contig.py --cov <FILE> --out <DIR>
+
+Mandatory:
+  --cov  STR        Coverage file
+  --out STR         Directory for temporary and output files.
+```
+
+
+`--cov` specifies the .
+
+`--out` specifies the .
+
+
 
 cov_based_phasing.py
 
