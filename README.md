@@ -31,7 +31,7 @@ Mandatory:
 
 ```
 Usage:
-  python cov_based_phasing.py --cov <FILE> --out <DIR>
+  python cov_based_phasing.py --covinfo1 <FILE> --covinfo2 <FILE> --assembly <FILE> --haplo1 <FILE> --haplo2 <FILE> --unclass <FILE>
 
 Mandatory:
   --covinfo1  STR        Coverage file1
@@ -60,13 +60,40 @@ Mandatory:
 
 ## Contig length distribution
 
-contig_lenth_distr.py
+```
+Usage:
+  python contig_lenth_distr.py --cov <FILE> --out <DIR>
+
+Mandatory:
+  --in   STR        Input file (FASTA)
+  --out  STR        Output file (TXT)
+```
+
+
+`--in` specifies the assembly input file (FASTA).
+
+`--out` specifies the statistics output file (TXT).
 
 
 ## Removal of spurious markers
-This scripts removed single markers which are apparently misplaced on the wrong linkage group. Input and output are BED files. This script also removes genetic markers with an identical genetic position i.e. no recombination between two adjacent markers.
+This scripts removed single markers which are apparently misplaced on the wrong linkage group. Input and output are BED files. This script also removes genetic markers with an identical genetic position i.e. no recombination between two adjacent markers. This reduces the computational time required for downstream operations.
 
-remove_spurious_markers.py
+
+```
+Usage:
+  python3 remove_spurious_markers.py --cov <FILE> --out <DIR>
+
+Mandatory:
+  --in   STR        Input file (TXT)
+  --out  STR        Output file (TXT)
+```
+
+
+`--in` specifies the input file that contains all genetic markers (TXT).
+
+`--out` specifies the output file that will contain only the clean genetic markers (TXT).
+
+
 
 ## Marker colinearity check
 This script performs a nummeric comparison of genetic and physical marker positions to identify outliers. Groups of X outliers with a minimal genetic size of X are flagged.
