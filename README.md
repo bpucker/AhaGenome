@@ -182,10 +182,28 @@ jcvi_wrapper_genes.py
 
 
 ## Analyze phasing at individual gene level
+Checks the phasing of haplophases based on sequence variants and coverage depth in a read mapping.
 
-phasing_check.py
+
+```
+Usage:
+  python phasing_check.py  --ref <FILE> --out <FOLDER> --vcf1 <VCF_FILE1> --vcf2 <VCF_FILE2>
+
+Mandatory:
+  --ref        STR        Assembly file (FASTA)
+  --vcf1       STR        Variant file haplophase1 (VCF)
+  --vcf2       STR        Variant file haplophase2 (VCF)
+  --out        STR        Output folder
+```
 
 
+`--ref` specifies the assembly input file (FASTA).
+
+`--vcf1` specifies the VCF file of haplophase1 reads mapped against the assembly.
+
+`--vcf2` specifies the VCF file of haplophase2 reads mapped against the assembly.
+
+`--out` specifies the output folder.
 
 
 ## References
