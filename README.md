@@ -148,7 +148,33 @@ Mandatory:
 `--cpus` specifies the number of threads to use for BLAST.
 
 
-in_silico_genetic_map_constructor.py
+Script for the contstruction of a genetic map (BED) which serves as input for ALLPATHS.
+
+```
+Usage:
+  python in_silico_genetic_map_constructor.py --assembly <FILE> --ref <FILE> --out <FOLDER>
+
+Mandatory:
+  --assembly   STR        Assembly file (FASTA)
+  --ref        STR        Reads file (FASTA)
+  --out        STR        Output folder
+  
+  optional:
+  --cluster     -         Activate cluster usage
+  --k           INT       Marker query length
+```
+
+
+`--assembly` specifies the assembly input file (FASTA).
+
+`--ref` specifies the reference input file (FASTA).
+
+`--out` specifies the output folder.
+
+`--cluster` activates the compute cluster usage instead of running everything locally..
+
+`--k` specifies the length of the query sequence that is used to identify the marker position in the new assembly.
+
 
 jcvi_wrapper_genes.py
 
