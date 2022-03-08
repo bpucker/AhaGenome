@@ -206,6 +206,13 @@ Mandatory:
 `--out` specifies the output folder.
 
 
+## Modify BED file for inversion of chromosomes
+
+python3 invert_linkage_group.py
+
+
+
+
 ## References
 
 Siadjeu, C.*; Pucker, B.*; Viehöver, P.; Albach, D.C.; Weisshaar, B. High Contiguity de novo Genome Sequence Assembly of Trifoliate Yam (Dioscorea dumetorum) Using Long Read Sequencing. Genes 2020, 11, 274. doi: [10.3390/genes11030274](https://doi.org/10.3390/genes11030274)
