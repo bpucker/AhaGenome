@@ -211,6 +211,13 @@ Mandatory:
 python3 invert_linkage_group.py
 
 
+## Manual scaffolding
+
+This script can generate a FASTA file containing pseudochromosomes based on a FASTA file containing contigs and a corresponding AGP file.
+
+python3 manual_scaffolding.py
+
+
 
 
 ## References
